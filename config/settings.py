@@ -20,7 +20,7 @@ LOGS_DIR.mkdir(exist_ok=True)
 PROMPTS_DIR.mkdir(exist_ok=True)
 
 # --- НАСТРОЙКИ OPENROUTER (МОЗГ) ---
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "Pu-Pu-Pu"
 LLM_MODEL = "google/gemini-2.0-flash-001" 
 TEMPERATURE = 0.7  # Креативность: 0.1 - робот, 0.9 - сказочник
 MAX_TOKENS = 500   # Длина ответа
