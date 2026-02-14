@@ -3,10 +3,6 @@ import sys
 from config import settings
 from core.logger import logger
 
-# --- БЛОК ИСПРАВЛЕНИЯ ПУТЕЙ CUDA ---
-# Теперь берем пути прямо из твоего settings.py
-os.environ["LD_LIBRARY_PATH"] = ":".join(settings.NVIDIA_LIB_PATHS) + ":" + os.environ.get("LD_LIBRARY_PATH", "")
-
 try:
     from core.stt_engine import STTEngine
     from core.llm_engine import LLMEngine

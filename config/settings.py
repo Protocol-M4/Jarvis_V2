@@ -1,5 +1,10 @@
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+
+# Находим путь к .env относительно текущего файла
+env_path = Path(__file__).resolve().parent.parent / '.env'
+load_dotenv(dotenv_path=env_path)
 
 # --- ПУТИ К ФАЙЛАМ ---
 # Используем Path для кроссплатформенности и удобства
@@ -20,15 +25,15 @@ LOGS_DIR.mkdir(exist_ok=True)
 PROMPTS_DIR.mkdir(exist_ok=True)
 
 # --- НАСТРОЙКИ OPENROUTER (МОЗГ) ---
-OPENROUTER_API_KEY = "Pu-Pu-Pu"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "Pu-Pu-Pu")
 LLM_MODEL = "google/gemini-2.0-flash-001" 
 TEMPERATURE = 0.7  # Креативность: 0.1 - робот, 0.9 - сказочник
 MAX_TOKENS = 500   # Длина ответа
 
 # --- НАСТРОЙКИ WHISPER (СЛУХ) ---
-WHISPER_MODEL_SIZE = "base" # base, small, tiny (для экономии GPU)
+WHISPER_MODEL_SIZE = "medium" # base, small, tiny (для экономии GPU)
 COMPUTE_TYPE = "float32"    # Оптимизация под видеокарту
-DEVICE = "cuda"             # Считаем на GPU 1050 Ti
+DEVICE = "cpu"             # Считаем
 
 # --- НАСТРОЙКИ EDGE-TTS (ГОЛОС) ---
 TTS_VOICE = "ru-RU-DmitryNeural"
@@ -46,11 +51,10 @@ class Colors:
     ERROR = '\033[91m'       # Красный
     END = '\033[0m'
 
-# --- ПУТИ К БИБЛИОТЕКАМ NVIDIA (ДЛЯ LINUX) ---
-HOME = os.path.expanduser("~")
-NVIDIA_LIB_PATHS = [
-    f"{HOME}/jarvis/venv/lib/python3.12/site-packages/nvidia/cublas/lib",
-    f"{HOME}/jarvis/venv/lib/python3.12/site-packages/nvidia/cudnn/lib"
-]
+# --- НАСТРОЙКИ ПАМЯТИ (VECTOR DB) ---
+class MemorySettings:
+    DB_PATH = "data/vector_db"
+    COLLECTION_NAME = "jarvis_memory"
+    EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # Легкая локальная модель
 
 DEBUG_MODE = True

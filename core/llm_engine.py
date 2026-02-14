@@ -1,6 +1,8 @@
 import requests
 import json
 from config import settings
+from core.memory_manager import MemoryManager
+from core.logger import logger
 
 class LLMEngine:
     def __init__(self):
@@ -10,6 +12,14 @@ class LLMEngine:
         
         # Загружаем личность из файла, указанного в настройках
         self.system_prompt = self._load_system_prompt()
+        
+        # Инициализируем долгосрочную память
+        try:
+            self.memory = MemoryManager()
+            logger.info("MemoryManager successfully initialized in LLMEngine")
+        except Exception as e:
+            logger.error(f"Failed to initialize MemoryManager: {e}")
+            self.memory = None
 
     def _load_system_prompt(self):
         """Читает системный промпт из внешнего файла"""
@@ -26,12 +36,32 @@ class LLMEngine:
             "Content-Type": "application/json"
         }
         
+        # Получаем релевантный контекст из долгосрочной памяти
+        memory_context = []
+        if self.memory:
+            try:
+                memory_context = self.memory.get_relevant_context(user_text, n_results=3)
+                if memory_context:
+                    logger.info(f"Retrieved {len(memory_context)} memory contexts for query")
+            except Exception as e:
+                logger.error(f"Error retrieving memory context: {e}")
+        
+        # Формируем сообщения для API
+        messages = [{"role": "system", "content": self.system_prompt}]
+        
+        # Если есть контекст из памяти, добавляем его естественным образом
+        if memory_context:
+            context_text = "\n".join([f"- {fact}" for fact in memory_context])
+            memory_message = f"Вспоминаю из нашего прошлого общения:\n{context_text}\n\nЭто может быть полезно для ответа."
+            messages.append({"role": "system", "content": memory_message})
+            logger.info("Added memory context to conversation")
+        
+        # Добавляем текущий запрос пользователя
+        messages.append({"role": "user", "content": user_text})
+        
         data = {
             "model": self.model,
-            "messages": [
-                {"role": "system", "content": self.system_prompt},
-                {"role": "user", "content": user_text}
-            ],
+            "messages": messages,
             "temperature": settings.TEMPERATURE,
             "max_tokens": settings.MAX_TOKENS
         }
