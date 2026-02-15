@@ -26,7 +26,7 @@ PROMPTS_DIR.mkdir(exist_ok=True)
 
 # --- НАСТРОЙКИ OPENROUTER (МОЗГ) ---
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "Pu-Pu-Pu")
-LLM_MODEL = "google/gemini-2.0-flash-001" 
+LLM_MODEL = "anthropic/claude-3.5-sonnet" 
 TEMPERATURE = 0.7  # Креативность: 0.1 - робот, 0.9 - сказочник
 MAX_TOKENS = 500   # Длина ответа
 
@@ -40,8 +40,13 @@ TTS_VOICE = "ru-RU-DmitryNeural"
 
 # --- ПАРАМЕТРЫ ЗАПИСИ МИКРОФОНА ---
 SAMPLE_RATE = 16000
-RECORD_SECONDS = 5
+RECORD_SECONDS = 5          # Используется как запасной вариант, если VAD не работает
 CHANNELS = 1                # Моно
+
+# --- ПАРАМЕТРЫ VAD (Voice Activity Detection) ---
+VAD_SILENCE_THRESHOLD = 1.5  # секунды тишины для завершения записи
+VAD_SPEECH_THRESHOLD = 0.5   # порог вероятности речи (0.0 - 1.0)
+SESSION_TIMEOUT = 7          # секунды ожидания продолжения диалога
 
 # --- ИНТЕРФЕЙС (Цвета для консоли) ---
 class Colors:
@@ -56,5 +61,6 @@ class MemorySettings:
     DB_PATH = "data/vector_db"
     COLLECTION_NAME = "jarvis_memory"
     EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # Легкая локальная модель
+    MEMORY_THRESHOLD = 0.35  # Порог дистанции для связывания фактов
 
 DEBUG_MODE = True

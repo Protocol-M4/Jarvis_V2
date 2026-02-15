@@ -3,7 +3,7 @@ from config import settings
 
 def setup_logger():
     logger = logging.getLogger("Jarvis")
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)  # Изменено с INFO на DEBUG для более подробного логирования
 
     # Формат: Время - Модуль - Уровень - Сообщение
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
