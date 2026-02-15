@@ -40,7 +40,7 @@ class STTEngine:
         # Параметры VAD
         self.sample_rate = settings.SAMPLE_RATE
         self.silence_threshold = settings.VAD_SILENCE_THRESHOLD  # секунды тишины для завершения записи
-        self.speech_threshold = settings.VAD_SPEECH_THRESHOLD    # порог вероятности речи
+        self.speech_threshold = 0.5  # Возвращаем порог к стандартному значению
         self.audio_buffer = deque(maxlen=int(self.sample_rate * 30))  # буфер на 30 секунд
         self.is_recording = False
         
@@ -188,6 +188,30 @@ class STTEngine:
             print(f"{settings.Colors.ERROR}[STT] Ошибка транскрипции: {e}{settings.Colors.END}")
             return ""
     
+    def transcribe_existing_file(self):
+        """Транскрибирует существующий файл без перезаписи"""
+        try:
+            # Проверяем существование файла
+            if not os.path.exists(settings.TEMP_WAV):
+                logger.error(f"Файл {settings.TEMP_WAV} не существует")
+                print(f"{settings.Colors.ERROR}[STT] Файл {settings.TEMP_WAV} не существует{settings.Colors.END}")
+                return ""
+            
+            # Получаем длину аудио в секундах
+            audio_info = sf.info(settings.TEMP_WAV)
+            audio_length = audio_info.duration
+            logger.info(f"Длина аудио для транскрипции: {audio_length:.2f} секунд")
+            print(f"{settings.Colors.SYSTEM}[STT] Транскрибирую существующий файл, длина: {audio_length:.2f} секунд{settings.Colors.END}")
+            
+            # Транскрибируем файл
+            segments, _ = self.model.transcribe(settings.TEMP_WAV, language="ru")
+            text = "".join([s.text for s in segments])
+            return text.strip()
+        except Exception as e:
+            logger.error(f"Ошибка транскрипции существующего файла: {e}")
+            print(f"{settings.Colors.ERROR}[STT] Ошибка транскрипции существующего файла: {e}{settings.Colors.END}")
+            return ""
+    
     def legacy_record_to_file(self):
         """Старый метод записи с фиксированным временем (запасной вариант)"""
         print(f"{settings.Colors.SYSTEM}>>> Слушаю (фиксированное время {settings.RECORD_SECONDS}с)...{settings.Colors.END}")
@@ -200,3 +224,33 @@ class STTEngine:
         sd.wait()
         sf.write(settings.TEMP_WAV, audio_data, settings.SAMPLE_RATE)
         return True
+    
+    def stop_recording(self):
+        """Останавливает все активные записи и освобождает ресурсы"""
+        logger.info("Останавливаю запись STT...")
+        
+        # Если есть активные очереди, очищаем их
+        if hasattr(self, 'audio_queue'):
+            try:
+                # Очищаем очередь
+                while not self.audio_queue.empty():
+                    try:
+                        self.audio_queue.get_nowait()
+                        self.audio_queue.task_done()
+                    except:
+                        pass
+            except Exception as e:
+                logger.error(f"Ошибка при очистке очереди STT: {e}", exc_info=True)
+        
+        # Если есть активные потоки, останавливаем их
+        if hasattr(self, 'vad_thread') and self.vad_thread.is_alive():
+            try:
+                self.vad_thread.join(timeout=1.0)
+            except Exception as e:
+                logger.error(f"Ошибка при остановке потока VAD: {e}", exc_info=True)
+        
+        # Очищаем буфер аудио
+        if hasattr(self, 'audio_buffer'):
+            self.audio_buffer.clear()
+        
+        logger.info("Запись STT остановлена")
