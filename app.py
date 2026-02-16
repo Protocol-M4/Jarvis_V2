@@ -187,6 +187,15 @@ class JarvisEngine(QThread):
             if hasattr(self, 'wake_word_detector'):
                 self.wake_word_detector.stop_monitoring()
                 self.log_signal.emit("Детектор ключевого слова остановлен")
+                
+                # Освобождаем ресурсы sounddevice для предотвращения конфликтов
+                try:
+                    import sounddevice as sd
+                    sd._terminate()  # Принудительно освобождаем все ресурсы sounddevice
+                    time.sleep(0.1)  # Даем время на освобождение ресурсов
+                    logger.info("Ресурсы sounddevice освобождены после остановки wake word")
+                except Exception as e:
+                    logger.error(f"Ошибка при освобождении ресурсов sounddevice: {e}", exc_info=True)
         except Exception as e:
             logger.error(f"Ошибка при остановке детектора ключевого слова: {e}", exc_info=True)
     
@@ -194,19 +203,42 @@ class JarvisEngine(QThread):
         """Callback, вызываемый при обнаружении ключевого слова"""
         self.log_signal.emit(f"Обнаружено ключевое слово '{settings.WAKE_WORDS[0]}'")
         
-        # Останавливаем детектор ключевого слова
-        self.stop_wake_word_detection()
-        
-        # Воспроизводим звук активации
-        self.voice.say("Да, сэр?")
+        # Отключаем детектор ключевого слова на время ответа
+        self.wake_word_detector.mute(duration_seconds=3.0)
         
         # Переходим в режим слушания
         self.set_state(JarvisState.HEARING)
         
-        # Вместо записи нового аудио, используем уже обрезанный файл
-        # Аудио-буфер уже обрезан в WakeWordDetector._check_wake_word и сохранен в settings.TEMP_WAV
-        self.log_signal.emit("Транскрибирую существующий аудио-файл с ключевым словом...")
-        user_text = self.ears.transcribe_existing_file()
+        # Воспроизводим звук активации
+        self.voice.say("Слушаю вас, Никита")
+        
+        # Устанавливаем таймер для возврата в режим IDLE при отсутствии речи
+        silence_timeout = 5.0  # 5 секунд тишины для возврата в IDLE
+        silence_timer = threading.Timer(silence_timeout, self._handle_silence_timeout)
+        silence_timer.daemon = True
+        silence_timer.start()
+        
+        # Полностью останавливаем детектор ключевого слова перед записью
+        self.stop_wake_word_detection()
+        
+        # Небольшая пауза для освобождения ресурсов микрофона
+        time.sleep(0.2)
+        
+        # Записываем новую команду
+        recording_success = self.ears.record_to_file()
+        
+        # Если запись началась успешно, отменяем таймер тишины
+        if recording_success:
+            silence_timer.cancel()
+        
+        # Если запись не удалась (не обнаружена речь), возвращаемся в режим ожидания
+        if not recording_success:
+            self.log_signal.emit("Речь не обнаружена, возвращаюсь в режим ожидания")
+            self.set_state(JarvisState.IDLE)
+            return
+        
+        # Преобразуем аудио в текст
+        user_text = self.ears.transcribe_file()
         
         if user_text:
             self.user_message_signal.emit(user_text)
@@ -230,6 +262,9 @@ class JarvisEngine(QThread):
                 self.log_signal.emit("Получен некорректный ответ, запрашиваю повтор...")
                 answer = self.brain.ask("Повтори еще раз, возникла системная ошибка связи.")
             
+            # Отключаем детектор ключевого слова на время ответа
+            self.wake_word_detector.mute(duration_seconds=len(answer.split()) * 0.3)  # Примерно 0.3 секунды на слово
+            
             # Отвечаем
             self.set_state(JarvisState.SPEAKING)
             self.jarvis_message_signal.emit(answer)
@@ -238,14 +273,26 @@ class JarvisEngine(QThread):
             # Возвращаемся в режим ожидания
             self.set_state(JarvisState.IDLE)
             
-            # Запускаем детектор ключевого слова снова
-            self.start_wake_word_detection()
+            # Перезапускаем детектор ключевого слова
+            if self.wake_word_active:
+                # Небольшая пауза для освобождения ресурсов микрофона
+                time.sleep(0.2)
+                self.start_wake_word_detection()
         else:
             self.error_signal.emit("Транскрипция не удалась или текст пустой")
             self.set_state(JarvisState.IDLE)
             
-            # Запускаем детектор ключевого слова снова
-            self.start_wake_word_detection()
+            # Перезапускаем детектор ключевого слова
+            if self.wake_word_active:
+                # Небольшая пауза для освобождения ресурсов микрофона
+                time.sleep(0.2)
+                self.start_wake_word_detection()
+    
+    def _handle_silence_timeout(self):
+        """Обработчик таймаута тишины после активации ключевого слова"""
+        if self.current_state == JarvisState.HEARING:
+            self.log_signal.emit("Таймаут тишины, возвращаюсь в режим ожидания")
+            self.set_state(JarvisState.IDLE)
     
     def toggle_wake_word_mode(self, active):
         """Включает или выключает режим ключевого слова"""

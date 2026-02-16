@@ -1408,3 +1408,624 @@
 2026-02-15 20:25:53,224 [INFO] Jarvis: Запись STT остановлена
 2026-02-15 20:25:53,224 [INFO] Jarvis: Ресурсы sounddevice освобождены
 2026-02-15 20:30:44,678 [INFO] Jarvis: Наблюдатели за событиями питания macOS удалены
+2026-02-16 20:43:08,756 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 20:43:08,756 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 20:43:08,756 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 20:43:08,756 [ERROR] Jarvis: Ошибка при загрузке модели Piper: Expecting value: line 1 column 1 (char 0)
+2026-02-16 20:43:08,756 [WARNING] Jarvis: Используем Edge TTS как запасной вариант
+2026-02-16 20:43:08,922 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 20:43:08,923 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 20:43:09,492 [ERROR] Jarvis: Критическая ошибка в модуле озвучки: Unknown WAVE format
+2026-02-16 20:43:09,493 [INFO] Jarvis: Тестирование завершено
+2026-02-16 20:43:09,591 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 20:43:58,822 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 20:43:58,822 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 20:43:58,822 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 20:43:58,822 [ERROR] Jarvis: Ошибка при загрузке модели Piper: Expecting value: line 1 column 1 (char 0)
+2026-02-16 20:43:58,823 [WARNING] Jarvis: Используем Edge TTS как запасной вариант
+2026-02-16 20:43:58,973 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 20:43:58,973 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 20:43:59,585 [ERROR] Jarvis: Ошибка при воспроизведении аудио: Unknown WAVE format
+2026-02-16 20:43:59,586 [INFO] Jarvis: Тестирование завершено
+2026-02-16 20:43:59,683 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 20:45:11,207 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 20:45:11,207 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 20:45:11,207 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 20:45:11,207 [ERROR] Jarvis: Ошибка при загрузке модели Piper: Expecting value: line 1 column 1 (char 0)
+2026-02-16 20:45:11,207 [WARNING] Jarvis: Используем Edge TTS как запасной вариант
+2026-02-16 20:45:11,360 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 20:45:11,361 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 20:45:17,480 [INFO] Jarvis: Тестирование завершено
+2026-02-16 20:45:17,577 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:09:56,337 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:09:56,337 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:09:56,341 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:10:22,620 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:10:22,620 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:10:22,620 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:10:22,970 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:10:23,072 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:10:23,073 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:10:23,073 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: 'PiperVoice' object is not callable
+2026-02-16 21:10:23,073 [WARNING] Jarvis: Не удалось сгенерировать аудио. Пропускаем воспроизведение.
+2026-02-16 21:10:23,073 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:10:23,175 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:11:10,684 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:11:10,684 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:11:10,685 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:11:11,050 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:11:11,155 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:11:11,155 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:11:11,416 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: tuple index out of range
+2026-02-16 21:11:11,416 [WARNING] Jarvis: Не удалось сгенерировать аудио. Пропускаем воспроизведение.
+2026-02-16 21:11:11,416 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:11:11,514 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:12:21,981 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:12:21,981 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:12:21,982 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:12:22,370 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:12:22,472 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:12:22,472 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:12:22,472 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: tuple index out of range
+2026-02-16 21:12:22,472 [INFO] Jarvis: Пробуем альтернативный метод синтеза...
+2026-02-16 21:12:22,473 [ERROR] Jarvis: Альтернативный метод синтеза также не удался: 'PiperVoice' object has no attribute 'synthesize_to_file'
+2026-02-16 21:12:22,473 [WARNING] Jarvis: Не удалось сгенерировать аудио. Пропускаем воспроизведение.
+2026-02-16 21:12:22,473 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:12:22,574 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:14:56,345 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:14:56,345 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:14:56,346 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:14:56,691 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:14:56,793 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:14:56,793 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:14:56,820 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: memoryview: a bytes-like object is required, not 'AudioChunk'
+2026-02-16 21:14:56,820 [WARNING] Jarvis: Не удалось сгенерировать аудио. Пропускаем воспроизведение.
+2026-02-16 21:14:56,820 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:14:56,916 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:15:39,858 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:15:39,858 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:15:39,858 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:15:40,225 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:15:40,327 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:15:40,327 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:15:40,425 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: zero-dimensional arrays cannot be concatenated
+2026-02-16 21:15:40,425 [INFO] Jarvis: Пробуем альтернативный подход с прямой записью в файл...
+2026-02-16 21:15:40,541 [INFO] Jarvis: Аудио успешно сгенерировано альтернативным методом и сохранено в temp_output_piper.wav
+2026-02-16 21:15:40,541 [ERROR] Jarvis: Файл temp_output_piper.wav имеет подозрительно малый размер (44 байт)
+2026-02-16 21:15:40,541 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:15:40,642 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:20:12,872 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:20:12,872 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:20:12,872 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:20:13,262 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 21:20:13,262 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:20:13,362 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:20:13,362 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:24:33,259 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:24:33,259 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:24:33,259 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:24:33,638 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 21:24:33,638 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:24:33,739 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:24:33,739 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:24:33,780 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 21:24:33,780 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 21:24:33,781 [ERROR] Jarvis: Ошибка при генерации аудио с Piper: len() of unsized object
+2026-02-16 21:24:33,781 [INFO] Jarvis: Пробуем альтернативный подход с прямой записью в файл...
+2026-02-16 21:24:33,856 [INFO] Jarvis: Аудио успешно сгенерировано альтернативным методом и сохранено в temp_output_piper.wav
+2026-02-16 21:24:33,856 [ERROR] Jarvis: Файл temp_output_piper.wav имеет подозрительно малый размер (44 байт)
+2026-02-16 21:24:33,856 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:24:33,961 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 21:27:51,417 [INFO] Jarvis: Тестирование TTS движка с текстом: 'Привет! Это тестовое сообщение для проверки синтеза речи.'
+2026-02-16 21:27:51,417 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 21:27:51,418 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 21:27:51,812 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 21:27:51,812 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 21:27:51,914 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 21:27:51,914 [INFO] Jarvis: Озвучиваем текст...
+2026-02-16 21:27:51,941 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 21:27:51,942 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 21:27:52,005 [INFO] Jarvis: Аудио сгенерировано, размер файла: 169516 байт
+2026-02-16 21:27:52,005 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 21:27:55,854 [INFO] Jarvis: Тестирование завершено
+2026-02-16 21:27:55,954 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:14,379 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:14,380 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:14,766 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:14,766 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:14,874 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:14,919 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:14,920 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:14,920 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:14,920 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:15,650 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:15,665 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:15,666 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:16,050 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:16,050 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:16,078 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:16,103 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:16,103 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:16,103 [INFO] Jarvis: Аудио сгенерировано, размер файла: 44588 байт
+2026-02-16 23:09:16,103 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:17,249 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:17,267 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:17,267 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:17,659 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:17,659 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:17,686 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:17,707 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:17,707 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:17,707 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:17,707 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:18,633 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:18,653 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:18,654 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:19,030 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:19,030 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:19,058 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:19,073 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:19,074 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:19,074 [INFO] Jarvis: Аудио сгенерировано, размер файла: 24108 байт
+2026-02-16 23:09:19,074 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:19,803 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:19,822 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:19,822 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:20,221 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:20,221 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:20,249 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:20,270 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:20,270 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:20,270 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:09:20,270 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:21,312 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:21,335 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:21,335 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:21,716 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:21,716 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:21,744 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:21,764 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:21,764 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:21,764 [INFO] Jarvis: Аудио сгенерировано, размер файла: 31276 байт
+2026-02-16 23:09:21,765 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:22,585 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:22,605 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:22,605 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:23,011 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:23,011 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:23,039 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:23,062 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:23,062 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:23,062 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:09:23,062 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:24,102 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:24,127 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:24,127 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:24,519 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:24,519 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:24,546 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:24,567 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:24,567 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:24,568 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:24,568 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:25,494 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:25,517 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:25,517 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:25,911 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:25,911 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:25,938 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:25,955 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:25,956 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:25,956 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:25,956 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:26,681 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:26,704 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:26,705 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:27,096 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:27,096 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:27,122 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:27,139 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:27,140 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:27,140 [INFO] Jarvis: Аудио сгенерировано, размер файла: 27180 байт
+2026-02-16 23:09:27,140 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:27,864 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:27,886 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:27,886 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:28,271 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:28,271 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:28,297 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:28,314 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:28,314 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:28,314 [INFO] Jarvis: Аудио сгенерировано, размер файла: 24108 байт
+2026-02-16 23:09:28,314 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:29,042 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:29,065 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:29,065 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:29,462 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:29,463 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:29,490 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:29,513 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:29,513 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:29,513 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:09:29,513 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:30,545 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:30,567 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:30,567 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:30,968 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:30,969 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:30,996 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:31,014 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:31,014 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:31,014 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:31,014 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:31,740 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:31,760 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:31,760 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:32,138 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:32,138 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:32,164 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:32,187 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:32,187 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:32,187 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:32,187 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:33,119 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:33,142 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:33,142 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:33,517 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:33,517 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:33,544 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:33,567 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:33,567 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:33,568 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:09:33,568 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:34,608 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:34,632 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:34,632 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:35,007 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:35,007 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:35,035 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:35,052 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:35,053 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:35,053 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:35,053 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:35,777 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:35,796 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:35,796 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:36,177 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:36,178 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:36,204 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:36,222 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:36,222 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:36,222 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:36,222 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:36,947 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:36,966 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:36,966 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:37,348 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:37,348 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:37,375 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:37,396 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:37,396 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:37,396 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:37,396 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:38,334 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:38,355 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:38,356 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:38,736 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:38,736 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:38,762 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:38,785 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:38,785 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:38,785 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:38,785 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:39,718 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:39,742 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:39,742 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:40,144 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:40,145 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:40,171 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:40,188 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:40,189 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:40,189 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:40,189 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:40,916 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:40,940 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:40,940 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:41,327 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:41,327 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:41,353 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:41,373 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:41,373 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:41,374 [INFO] Jarvis: Аудио сгенерировано, размер файла: 31276 байт
+2026-02-16 23:09:41,374 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:42,202 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:42,225 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:42,226 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:42,615 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:42,615 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:42,642 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:42,662 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:42,662 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:42,662 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:42,662 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:43,598 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:43,621 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:43,621 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:43,998 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:43,998 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:44,025 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:44,043 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:44,043 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:44,044 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25132 байт
+2026-02-16 23:09:44,044 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:44,771 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:44,794 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:44,794 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:45,183 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:45,183 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:45,207 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:45,228 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:45,228 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:45,229 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:45,229 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:45,951 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:45,971 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:45,971 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:46,357 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:46,357 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:46,385 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:46,402 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:46,402 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:46,402 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:46,402 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:47,127 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:47,150 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:47,150 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:47,541 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:47,541 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:47,567 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:47,590 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:47,590 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:47,590 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:47,590 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:48,526 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:48,550 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:48,550 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:48,936 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:48,936 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:48,964 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:48,986 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:48,986 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:48,986 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:48,986 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:49,923 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:49,947 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:49,947 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:50,331 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:50,331 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:50,357 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:50,378 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:50,378 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:50,378 [INFO] Jarvis: Аудио сгенерировано, размер файла: 31276 байт
+2026-02-16 23:09:50,378 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:51,208 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:51,232 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:51,232 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:51,614 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:51,614 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:51,639 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:51,667 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:51,667 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:51,667 [INFO] Jarvis: Аудио сгенерировано, размер файла: 44588 байт
+2026-02-16 23:09:51,667 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:52,810 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:52,832 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:52,832 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:53,218 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:53,218 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:53,245 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:53,268 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:53,268 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:53,269 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:53,269 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:54,201 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:54,212 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:54,212 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:54,582 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:54,582 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:54,609 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:54,629 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:54,629 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:54,629 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:09:54,630 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:55,555 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:55,582 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:55,583 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:55,968 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:55,968 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:55,996 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:56,023 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:56,023 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:56,023 [INFO] Jarvis: Аудио сгенерировано, размер файла: 46636 байт
+2026-02-16 23:09:56,023 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:57,168 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:57,194 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:09:57,194 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:09:57,579 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:57,579 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:57,604 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:57,624 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:57,624 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:57,625 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:09:57,625 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:58,358 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:58,380 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:58,380 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:09:58,772 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:09:58,772 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:09:58,799 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:09:58,822 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:09:58,822 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:09:58,822 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:09:58,822 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:09:59,852 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:09:59,878 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:09:59,878 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:00,275 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:00,275 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:00,300 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:00,322 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:00,322 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:00,322 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:00,322 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:01,247 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:01,271 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:01,272 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:01,657 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:01,657 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:01,685 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:01,702 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:01,702 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:01,702 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:01,702 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:02,430 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:02,448 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:02,449 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:02,833 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:02,833 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:02,860 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:02,881 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:02,881 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:02,881 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:02,881 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:03,818 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:03,843 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:03,844 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:04,226 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:04,226 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:04,254 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:04,273 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:04,274 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:04,274 [INFO] Jarvis: Аудио сгенерировано, размер файла: 31276 байт
+2026-02-16 23:10:04,274 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:05,105 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:05,126 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:05,126 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:05,542 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:05,542 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:05,570 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:05,587 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:05,588 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:05,588 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:05,588 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:06,315 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:06,337 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:06,338 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:06,730 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:06,730 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:06,757 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:06,779 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:06,779 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:06,779 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:06,779 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:07,701 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:07,724 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:07,725 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:08,154 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:08,155 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:08,183 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:08,205 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:08,206 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:08,206 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:08,206 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:09,139 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:09,163 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:09,164 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:09,566 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:09,566 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:09,593 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:09,617 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:09,617 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:09,617 [INFO] Jarvis: Аудио сгенерировано, размер файла: 39980 байт
+2026-02-16 23:10:09,617 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:10,659 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:10,678 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:10,679 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:11,087 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:11,087 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:11,113 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:11,131 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:11,131 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:11,131 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:11,131 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:11,867 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:11,886 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:11,886 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:12,323 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:12,323 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:12,349 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:12,367 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:12,368 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:12,368 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:12,368 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:13,093 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:13,114 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:13,115 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:13,524 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:13,524 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:13,553 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:13,586 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:13,586 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:13,586 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:13,586 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:14,305 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:14,322 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:14,322 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:14,728 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:14,729 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:14,754 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:14,771 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:14,771 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:14,772 [INFO] Jarvis: Аудио сгенерировано, размер файла: 25644 байт
+2026-02-16 23:10:14,772 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:15,496 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:15,516 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:15,517 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:15,931 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:15,931 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:15,959 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:15,982 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:15,982 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:15,982 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:15,982 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:16,905 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:16,926 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:16,926 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:17,342 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:17,342 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:17,365 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:17,386 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:17,386 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:17,387 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:17,387 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:18,322 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:18,347 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-irina-medium...
+2026-02-16 23:10:18,348 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-irina-medium.onnx...
+2026-02-16 23:10:18,770 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:18,770 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:18,796 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:18,818 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:18,818 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:18,819 [INFO] Jarvis: Аудио сгенерировано, размер файла: 35884 байт
+2026-02-16 23:10:18,819 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:19,751 [INFO] Jarvis: Голосовой движок освобожден
+2026-02-16 23:10:19,775 [INFO] Jarvis: Инициализация голосового движка Piper TTS с голосом ru_RU-dmitri-medium...
+2026-02-16 23:10:19,775 [INFO] Jarvis: Загрузка модели Piper из models/piper/ru_RU-dmitri-medium.onnx...
+2026-02-16 23:10:20,154 [INFO] Jarvis: Тип объекта Piper: <class 'piper.voice.PiperVoice'>
+2026-02-16 23:10:20,155 [INFO] Jarvis: Модель Piper успешно загружена
+2026-02-16 23:10:20,181 [INFO] Jarvis: Голосовой движок инициализирован
+2026-02-16 23:10:20,202 [INFO] Jarvis: Тип аудио-чанка: <class 'piper.voice.AudioChunk'>
+2026-02-16 23:10:20,202 [INFO] Jarvis: Атрибуты аудио-чанка: ['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_audio_int16_array', '_audio_int16_bytes', '_phoneme_alignments', 'audio_float_array', 'audio_int16_array', 'audio_int16_bytes', 'phoneme_alignments', 'phoneme_id_samples', 'phoneme_ids', 'phonemes', 'sample_channels', 'sample_rate', 'sample_width']
+2026-02-16 23:10:20,202 [INFO] Jarvis: Аудио сгенерировано, размер файла: 31276 байт
+2026-02-16 23:10:20,202 [INFO] Jarvis: Аудио успешно сгенерировано и сохранено в temp_output_piper.wav
+2026-02-16 23:10:20,764 [INFO] Jarvis: Голосовой движок освобожден

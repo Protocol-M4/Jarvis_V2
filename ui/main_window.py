@@ -183,9 +183,18 @@ class MainWindow(QMainWindow):
         if state == JarvisState.IDLE:
             self.start_button.setEnabled(True)
             self.stop_button.setEnabled(False)
+            # Сбрасываем стиль статус-бара
+            self.status_bar.setStyleSheet("")
+        elif state == JarvisState.HEARING:
+            self.start_button.setEnabled(False)
+            self.stop_button.setEnabled(True)
+            # Подсвечиваем статус-бар при активации слушания (особенно после wake word)
+            self.status_bar.setStyleSheet("background-color: #4EC9B0; color: black; font-weight: bold;")
         else:
             self.start_button.setEnabled(False)
             self.stop_button.setEnabled(True)
+            # Сбрасываем стиль статус-бара для других состояний
+            self.status_bar.setStyleSheet("")
     
     @Slot(object)  # Изменяем аннотацию, чтобы принимать разные типы
     def update_status(self, status):

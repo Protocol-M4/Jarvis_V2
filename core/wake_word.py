@@ -6,9 +6,8 @@ import threading
 import numpy as np
 import torch
 import sounddevice as sd
-import soundfile as sf
 from collections import deque
-from faster_whisper import WhisperModel
+from openwakeword import Model
 
 # Магия импорта: позволяем Python видеть папку config, которая на уровень выше
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -18,14 +17,14 @@ from core.logger import logger
 class WakeWordDetector:
     """
     Класс для обнаружения ключевого слова (wake word) с использованием
-    каскадной системы: Silero VAD -> Whisper tiny
+    OpenWakeWord - легковесной и быстрой модели для детекции ключевых слов
     """
     
     def __init__(self):
         """Инициализация детектора ключевого слова"""
         logger.info("Инициализация системы обнаружения ключевого слова...")
         
-        # Инициализация Silero VAD
+        # Инициализация Silero VAD для предварительной фильтрации
         logger.info(f"Загрузка модели Silero VAD...")
         self.vad_model, utils = torch.hub.load(repo_or_dir='snakers4/silero-vad',
                                               model='silero_vad',
@@ -37,23 +36,45 @@ class WakeWordDetector:
         # Переводим модель в режим оценки
         self.vad_model.eval()
         
-        # Инициализация Whisper для проверки ключевого слова
-        logger.info(f"Загрузка модели Whisper {settings.WAKE_WORD_MODEL_SIZE} для проверки ключевого слова...")
-        self.whisper_model = WhisperModel(
-            settings.WAKE_WORD_MODEL_SIZE, 
-            device=settings.DEVICE, 
-            compute_type=settings.COMPUTE_TYPE
+        # Инициализация OpenWakeWord
+        logger.info("Загрузка модели OpenWakeWord...")
+        
+        # Загружаем предобученную модель "hey_jarvis"
+        logger.info("Загружаем предобученную модель 'hey_jarvis'")
+        self.oww_model = Model(
+            wakeword_models=["hey_jarvis"],
+            inference_framework="onnx"
         )
+        
+        # Проверяем наличие пользовательской модели (для логирования)
+        model_path = os.path.join("models", "openwakeword", "jarvis_ru_universal.joblib")
+        if os.path.exists(model_path):
+            logger.info(f"Пользовательская модель найдена: {model_path}, но используется базовая модель hey_jarvis")
+            
+            # Пробуем загрузить модель через joblib для проверки
+            try:
+                import joblib
+                model_data = joblib.load(model_path)
+                logger.info(f"Модель успешно загружена через joblib: {type(model_data)}")
+            except Exception as e:
+                logger.error(f"Ошибка при загрузке модели через joblib: {e}")
+        else:
+            logger.info("Пользовательская модель не найдена, используется предобученная 'hey_jarvis'")
         
         # Параметры
         self.sample_rate = settings.SAMPLE_RATE
         self.speech_threshold = settings.WAKE_WORD_THRESHOLD
-        self.buffer_size = int(self.sample_rate * settings.WAKE_WORD_BUFFER_SIZE)
+        self.buffer_size = int(self.sample_rate * 3)  # 3 секунды буфера для OpenWakeWord
         self.audio_buffer = deque(maxlen=self.buffer_size)
+        
+        # Буфер для VAD (гарантированно 512 сэмплов при 16кГц)
+        self.vad_buffer_size = int(16000 / 16000 * 512)  # 512 сэмплов при 16кГц
+        self.vad_buffer = deque(maxlen=self.vad_buffer_size)
         
         # Флаги состояния
         self.is_running = False
-        self.speech_detected = False
+        self.is_muted = False  # Флаг для временного отключения обработки
+        self.mute_until = 0    # Время, до которого детектор будет отключен
         
         logger.info("Система обнаружения ключевого слова инициализирована")
     
@@ -119,16 +140,30 @@ class WakeWordDetector:
             if self.monitor_thread.is_alive():
                 logger.warning("Поток мониторинга не завершился корректно")
         
-        # Очищаем буфер аудио
-        if hasattr(self, 'audio_buffer'):
-            self.audio_buffer.clear()
+        # Очищаем буферы
+        self.audio_buffer.clear()
+        self.vad_buffer.clear()
         
         logger.info("Мониторинг ключевого слова остановлен")
     
+    def mute(self, duration_seconds=2.0):
+        """
+        Временно отключает обработку аудио на указанное количество секунд.
+        Используется для предотвращения самоактивации при воспроизведении звука.
+        
+        Args:
+            duration_seconds (float): Длительность отключения в секундах
+        """
+        self.is_muted = True
+        self.mute_until = time.time() + duration_seconds
+        logger.info(f"Детектор ключевого слова отключен на {duration_seconds} секунд")
+        print(f"{settings.Colors.SYSTEM}[WAKE] Детектор ключевого слова отключен на {duration_seconds} секунд{settings.Colors.END}")
+    
     def _monitoring_loop(self):
         """Основной цикл мониторинга аудио"""
-        # Очищаем буфер перед началом
+        # Очищаем буферы перед началом
         self.audio_buffer.clear()
+        self.vad_buffer.clear()
         
         # Логирование начала цикла мониторинга
         logger.info("Запущен цикл мониторинга ключевого слова")
@@ -142,14 +177,15 @@ class WakeWordDetector:
         def audio_callback(indata, frames, time, status):
             if status:
                 logger.error(f"Ошибка записи: {status}")
-            # Преобразуем данные в формат, подходящий для VAD
+            # Преобразуем данные в формат, подходящий для обработки
             audio_chunk = indata.copy().flatten()
             if self.is_running:  # Проверяем флаг перед добавлением в очередь
                 self.audio_queue.put(audio_chunk)
         
-        # Функция обработки VAD в отдельном потоке
-        def vad_processing():
-            required_size = int(self.sample_rate / 16000 * 512)  # Требуемый размер для VAD
+        # Функция обработки аудио в отдельном потоке
+        def audio_processing():
+            # Буфер для накопления 512 сэмплов для VAD
+            vad_chunk_size = int(self.sample_rate / 16000 * 512)  # Размер чанка для VAD при текущей частоте дискретизации
             speech_frames_count = 0
             
             while not stop_event.is_set() and self.is_running:
@@ -161,57 +197,93 @@ class WakeWordDetector:
                         logger.info("Получен сигнал завершения (poison pill)")
                         break
                     
-                    # Добавляем чанк в буфер для сохранения аудио
+                    # Добавляем чанк в основной буфер
                     self.audio_buffer.extend(audio_chunk)
                     
-                    # Проверяем размер чанка для VAD
-                    if len(audio_chunk) != required_size:
+                    # Проверяем, не истекло ли время отключения
+                    if self.is_muted and time.time() > self.mute_until:
+                        self.is_muted = False
+                        logger.info("Детектор ключевого слова снова активен")
+                        print(f"{settings.Colors.SYSTEM}[WAKE] Детектор ключевого слова снова активен{settings.Colors.END}")
+                    
+                    # Если детектор отключен, пропускаем обработку
+                    if self.is_muted:
                         self.audio_queue.task_done()
+                        # Добавляем небольшую задержку для снижения нагрузки на CPU
+                        time.sleep(0.01)
                         continue
                     
-                    # Конвертируем numpy array в torch tensor
-                    audio_tensor = torch.tensor(audio_chunk, dtype=torch.float32)
-                    
-                    # Прямой вызов модели
-                    speech_prob = self.vad_model(audio_tensor, 16000).item()
-                    
-                    if speech_prob >= self.speech_threshold:
-                        # Речь обнаружена, увеличиваем счетчик
-                        speech_frames_count += 1
+                    # Добавляем данные в VAD буфер и обрабатываем, когда накопится нужное количество
+                    for sample in audio_chunk:
+                        self.vad_buffer.append(sample)
                         
-                        # Если накопилось достаточно фреймов с речью, проверяем ключевое слово
-                        if speech_frames_count >= 5:  # ~160ms речи (5 фреймов по 32ms)
-                            # Получаем метки речи с минимальной длительностью 300 мс
-                            audio_data = np.array(list(self.audio_buffer))
-                            audio_tensor_full = torch.tensor(audio_data, dtype=torch.float32)
-                            speech_timestamps = self.get_speech_timestamps(
-                                audio_tensor_full, 
-                                self.vad_model,
-                                threshold=self.speech_threshold,
-                                min_speech_duration_ms=300,
-                                sampling_rate=self.sample_rate
-                            )
+                        # Когда VAD буфер заполнен, обрабатываем его
+                        if len(self.vad_buffer) == self.vad_buffer_size:
+                            # Конвертируем VAD буфер в torch tensor
+                            vad_audio = np.array(list(self.vad_buffer))
+                            vad_tensor = torch.tensor(vad_audio, dtype=torch.float32)
                             
-                            # Проверяем наличие речи достаточной длительности
-                            if speech_timestamps:
-                                # Проверяем ключевое слово
-                                if self._check_wake_word():
-                                    # Ключевое слово обнаружено, вызываем callback
-                                    if self.callback:
-                                        self.callback()
-                                    # Сбрасываем счетчик
-                                    speech_frames_count = 0
-                    else:
-                        # Сбрасываем счетчик, если речь не обнаружена
-                        speech_frames_count = max(0, speech_frames_count - 1)
+                            # Прямой вызов VAD модели
+                            speech_prob = self.vad_model(vad_tensor, 16000).item()
+                            
+                            if speech_prob >= self.speech_threshold:
+                                # Речь обнаружена, увеличиваем счетчик
+                                speech_frames_count += 1
+                                
+                                # Если накопилось достаточно фреймов с речью, проверяем ключевое слово
+                                if speech_frames_count >= 5:  # ~160ms речи (5 фреймов по 32ms)
+                                    # Проверяем наличие ключевого слова с помощью OpenWakeWord
+                                    if len(self.audio_buffer) >= self.sample_rate:  # Минимум 1 секунда аудио
+                                        # Получаем аудио из буфера
+                                        audio_data = np.array(list(self.audio_buffer))
+                                        
+                                        # Нормализуем аудио
+                                        audio_data = audio_data / np.max(np.abs(audio_data) + 1e-10)
+                                        
+                                        # Получаем предсказание от OpenWakeWord
+                                        prediction = self.oww_model.predict(audio_data)
+                                        
+                                        # Получаем вероятность для модели hey_jarvis
+                                        score = prediction["hey_jarvis"]
+                                        logger.debug(f"Вероятность hey_jarvis: {score:.4f}")
+                                        
+                                        # Логируем вероятность
+                                        if score > 0.3:  # Логируем только если вероятность выше порога
+                                            logger.info(f"Вероятность ключевого слова: {score:.4f}")
+                                            print(f"{settings.Colors.SYSTEM}[WAKE] Вероятность ключевого слова: {score:.4f}{settings.Colors.END}")
+                                        
+                                        # Если вероятность выше порога, вызываем callback
+                                        if score > 0.4:  # Настраиваемый порог
+                                            logger.info(f"Обнаружено ключевое слово '{settings.WAKE_WORDS[0]}' с вероятностью {score:.4f}")
+                                            print(f"{settings.Colors.SYSTEM}[WAKE] Обнаружено ключевое слово '{settings.WAKE_WORDS[0]}' с вероятностью {score:.4f}{settings.Colors.END}")
+                                            
+                                            # Сохраняем аудио во временный файл для дальнейшей обработки
+                                            import soundfile as sf
+                                            sf.write(settings.TEMP_WAV, audio_data, self.sample_rate)
+                                            
+                                            # Вызываем callback
+                                            if self.callback:
+                                                self.callback()
+                                            
+                                            # Сбрасываем счетчик
+                                            speech_frames_count = 0
+                            else:
+                                # Сбрасываем счетчик, если речь не обнаружена
+                                speech_frames_count = max(0, speech_frames_count - 1)
+                            
+                            # Очищаем VAD буфер для следующего чанка
+                            self.vad_buffer.clear()
                     
                     self.audio_queue.task_done()
                 except queue.Empty:
-                    pass
+                    # Добавляем небольшую задержку при пустой очереди для снижения нагрузки на CPU
+                    time.sleep(0.05)
                 except Exception as e:
-                    logger.error(f"Ошибка в цикле обработки VAD: {e}")
+                    logger.error(f"Ошибка в цикле обработки аудио: {e}")
+                    # Добавляем задержку при ошибке, чтобы не забивать лог
+                    time.sleep(0.1)
         
-        # Запускаем потоки записи и обработки VAD
+        # Запускаем потоки записи и обработки аудио
         blocksize = int(self.sample_rate / 16000 * 512)  # Универсальная формула для разных частот
         
         try:
@@ -220,19 +292,19 @@ class WakeWordDetector:
                               samplerate=self.sample_rate, blocksize=blocksize)
             self.stream.start()
             
-            # Запускаем поток обработки VAD
-            self.vad_thread = threading.Thread(target=vad_processing)
-            self.vad_thread.daemon = True
-            self.vad_thread.start()
+            # Запускаем поток обработки аудио
+            self.audio_thread = threading.Thread(target=audio_processing)
+            self.audio_thread.daemon = True
+            self.audio_thread.start()
             
             # Ждем, пока не будет установлен флаг остановки
             while self.is_running:
-                time.sleep(0.5)  # Увеличиваем задержку для снижения нагрузки на процессор
+                time.sleep(0.2)  # Уменьшаем задержку для более быстрой реакции на остановку
             
-            # Останавливаем поток VAD
+            # Останавливаем поток обработки аудио
             stop_event.set()
             self.audio_queue.put(None)  # Отправляем poison pill
-            self.vad_thread.join(timeout=2.0)
+            self.audio_thread.join(timeout=2.0)
             
             # Останавливаем и закрываем стрим
             self.stream.stop()
@@ -241,125 +313,3 @@ class WakeWordDetector:
         except Exception as e:
             logger.error(f"Ошибка при запуске мониторинга: {e}")
             self.is_running = False
-    
-    def _check_wake_word(self):
-        """
-        Проверяет наличие ключевого слова в буфере аудио и обрезает буфер
-        
-        Returns:
-            bool: True, если ключевое слово обнаружено, иначе False
-        """
-        try:
-            # Отладочный вывод в начале метода
-            logger.info("Проверка на наличие ключевого слова в аудио-буфере...")
-            print(f"{settings.Colors.SYSTEM}[WAKE] Проверка на наличие ключевого слова '{settings.WAKE_WORDS[0]}' в аудио-буфере...{settings.Colors.END}")
-            
-            # Сохраняем буфер во временный файл
-            temp_file = settings.TEMP_WAV
-            audio_data = np.array(list(self.audio_buffer))
-            
-            # Логируем длину буфера до обрезки
-            buffer_length = len(audio_data) / self.sample_rate
-            logger.info(f"Буфер до обрезки: {buffer_length:.2f} секунд")
-            print(f"{settings.Colors.SYSTEM}[WAKE] Буфер до обрезки: {buffer_length:.2f} секунд{settings.Colors.END}")
-            
-            # Проверяем, достаточно ли длинный буфер для транскрипции
-            if buffer_length < 2.0:  # Минимум 2 секунды аудио
-                logger.info("Буфер слишком короткий для транскрипции, пропускаем")
-                print(f"{settings.Colors.SYSTEM}[WAKE] Буфер слишком короткий для транскрипции, пропускаем{settings.Colors.END}")
-                return False
-            
-            # Проверяем наличие речи в буфере с помощью VAD
-            audio_tensor = torch.tensor(audio_data, dtype=torch.float32)
-            speech_timestamps = self.get_speech_timestamps(
-                audio_tensor, 
-                self.vad_model,
-                threshold=self.speech_threshold,
-                min_speech_duration_ms=300,
-                sampling_rate=self.sample_rate
-            )
-            
-            # Если речь не обнаружена, пропускаем транскрипцию
-            if not speech_timestamps:
-                logger.info("Речь не обнаружена в буфере, пропускаем транскрипцию")
-                print(f"{settings.Colors.SYSTEM}[WAKE] Речь не обнаружена в буфере, пропускаем транскрипцию{settings.Colors.END}")
-                return False
-            
-            # Логируем информацию о найденной речи
-            speech_duration_ms = sum([t['end'] - t['start'] for t in speech_timestamps])
-            logger.info(f"Обнаружена речь в буфере, длительность: {speech_duration_ms/self.sample_rate*1000:.0f} мс")
-            print(f"{settings.Colors.SYSTEM}[WAKE] Обнаружена речь в буфере, длительность: {speech_duration_ms/self.sample_rate*1000:.0f} мс{settings.Colors.END}")
-            
-            # Сохраняем буфер во временный файл
-            sf.write(temp_file, audio_data, self.sample_rate)
-            
-            try:
-                # Транскрибируем аудио с помощью Whisper
-                segments, _ = self.whisper_model.transcribe(temp_file, language="ru")
-                
-                # Логируем все распознанные сегменты
-                for segment in segments:
-                    print(f"{settings.Colors.SYSTEM}[WAKE] Распознано: {segment.text}{settings.Colors.END}")
-                
-                # Ищем сегмент с ключевым словом
-                wake_word_detected = False
-                wake_word_segment = None
-                
-                for segment in segments:
-                    if any(word in segment.text.lower() for word in settings.WAKE_WORDS):
-                        wake_word_detected = True
-                        wake_word_segment = segment
-                        # Определяем, какое именно ключевое слово было обнаружено
-                        detected_word = next((word for word in settings.WAKE_WORDS if word in segment.text.lower()), settings.WAKE_WORDS[0])
-                        break
-                
-                if wake_word_detected and wake_word_segment:
-                    # Определяем, какое именно ключевое слово было обнаружено
-                    detected_word = next((word for word in settings.WAKE_WORDS if word in wake_word_segment.text.lower()), settings.WAKE_WORDS[0])
-                    logger.info(f"Обнаружено ключевое слово: '{detected_word}' в тексте: '{wake_word_segment.text}'")
-                    
-                    # Обрезаем аудио-буфер, начиная с позиции ключевого слова
-                    # Whisper возвращает время в секундах, переводим в сэмплы
-                    start_sample = int(wake_word_segment.start * self.sample_rate)
-                    
-                    # Создаем новый буфер, начиная с позиции ключевого слова
-                    # Но отступаем немного назад (0.2 секунды), чтобы гарантированно захватить слово
-                    safety_margin = int(0.2 * self.sample_rate)
-                    start_sample = max(0, start_sample - safety_margin)
-                    
-                    # Обрезаем буфер
-                    trimmed_audio = audio_data[start_sample:]
-                    
-                    # Логируем длину буфера после обрезки
-                    buffer_length_after = len(trimmed_audio) / self.sample_rate
-                    logger.info(f"Буфер после обрезки: {buffer_length_after:.2f} секунд (сокращение на {buffer_length - buffer_length_after:.2f} секунд)")
-                    print(f"{settings.Colors.SYSTEM}[WAKE] Буфер после обрезки: {buffer_length_after:.2f} секунд (сокращение на {buffer_length - buffer_length_after:.2f} секунд){settings.Colors.END}")
-                    
-                    # Сохраняем обрезанный буфер
-                    sf.write(settings.TEMP_WAV, trimmed_audio, self.sample_rate)
-                    
-                    # Обновляем аудио-буфер
-                    self.audio_buffer.clear()
-                    self.audio_buffer.extend(trimmed_audio)
-                    
-                    logger.info(f"Аудио-буфер обрезан, начиная с позиции ключевого слова (с запасом {safety_margin} сэмплов)")
-                elif wake_word_detected:
-                    # Если ключевое слово обнаружено, но сегмент не найден (редкий случай)
-                    text = "".join([s.text for s in segments]).lower()
-                    logger.info(f"Обнаружено ключевое слово в тексте: '{text}', но не удалось определить позицию")
-                
-                return wake_word_detected
-                
-            except RuntimeWarning as w:
-                logger.error(f"RuntimeWarning при транскрипции: {w}")
-                print(f"{settings.Colors.ERROR}[WAKE] RuntimeWarning при транскрипции: {w}{settings.Colors.END}")
-                # Очищаем буфер при ошибке
-                self.audio_buffer.clear()
-                return False
-                
-        except Exception as e:
-            logger.error(f"Ошибка при проверке ключевого слова: {e}")
-            print(f"{settings.Colors.ERROR}[WAKE] Ошибка при проверке ключевого слова: {e}{settings.Colors.END}")
-            # Очищаем буфер при ошибке
-            self.audio_buffer.clear()
-            return False
